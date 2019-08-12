@@ -1,0 +1,13 @@
+
+
+<ActionBar class="action-bar">
+	<GridLayout columns="4*,*">
+		<StackLayout col="0" class="m-y-auto">
+			<Label text="Home" class="action-bar-custom"></Label>
+		</StackLayout>
+	</GridLayout>
+	<ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+	ios.position="left">
+</ActionItem>
+<NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+</ActionBar>

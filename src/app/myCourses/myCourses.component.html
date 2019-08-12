@@ -1,0 +1,36 @@
+<ActionBar class="action-bar">
+	<GridLayout columns="4*,*">
+		<StackLayout col="0" class="m-y-auto">
+			<Label text="My Courses" class="action-bar-custom"></Label>
+		</StackLayout>
+	</GridLayout>
+	<ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+	ios.position="left">
+</ActionItem>
+<NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+</ActionBar>
+
+<!-- 		<RadListView [items]="courses" (itemTap)="onItemTapFirstList($event)" separatorColor="transparent">
+	<ng-template tkListItemTemplate let-course="item">
+		<GridLayout rows="* auto" columns="*" class="list-group-item active" style="border:1;">
+			<Image row="0" col="0" src="res://courseimg"></Image>
+			<StackLayout row="1" col="0" backgroundColor="white" class="list-group-item">
+                <Label class="list-group-item-heading m-b-3" fontSize="20" [text]="course?.courseName"></Label>  <StackLayout class="hr-light m-t-3"></StackLayout>
+                <Button text="Play" fontSize="11" class="btn btn-primary btn-active btn-rounded-lg m-t-4" (tap)="gotoPlaylist(course?.Videos,course?.courseName)"></Button> 
+            </StackLayout>
+				</GridLayout>
+			</ng-template>
+		</RadListView> -->
+<StackLayout>
+ <RadListView [items]="courses">
+        <ng-template  let-item="item">
+            <StackLayout orientation="vertical">
+                <Label class="nameLabel" [text]="course?.courseName" color="black"></Label>
+                <Label class="descriptionLabel" [text]="course?.courseName"></Label>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+    <ListViewLinearLayout tkListViewLayout scrollDirection="Vertical" itemInsertAnimation="Default" itemDeleteAnimation="Default"></ListViewLinearLayout>
+  </StackLayout>
+		
+<ActivityIndicator [busy]="isLoading" verticalAlignment="center" [visibility]="isLoading ? 'visible' : 'collapse'"></ActivityIndicator>
